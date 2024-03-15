@@ -1,0 +1,43 @@
+<header>
+  <h1>Book App</h1>
+  <p>demo app for deployment</p>
+</header>
+
+<main class="flex flex-row">
+  <section class="col-6 flex justify-content-center">
+    <div class="w-6">
+      <form [formGroup]="form"
+            (ngSubmit)="handleSubmit()">
+      <span class="p-float-label mt-6">
+        <input pInputText
+               id="in-title"
+               formControlName="title"
+        />
+        <label for="in-title">Title</label>
+      </span>
+        <span class="p-float-label mt-6">
+        <input pInputText
+               formControlName="author"
+               id="in-author"
+        />
+        <label for="in-author">Author</label>
+      </span>
+        <button pButton class="mt-6">
+          submit
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="col-6">
+    @if(books$ | async; as books){
+      @for( book of books; track book.title ){
+        <p>{{book.title}} - {{book.author}}</p>
+      }
+    }
+  </section>
+</main>
+
+<footer class="text-center">
+  <p>aKimts - 2024</p>
+</footer>
