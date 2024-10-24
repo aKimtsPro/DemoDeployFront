@@ -6,7 +6,7 @@
     "deploy_dev:start": "ng serve --configuration development",
     "deploy_prod:start": "ng serve",
     "deploy_dev:build": "ng build --configuration development",
-    "deploy_prod:build": "ng build",
+    "deploy_prod:build": "ng build --base-href /demo/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
